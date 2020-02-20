@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link href="img/favicon.ico" type="image/png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <title>Team</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+            background-color: #eee !important;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .landing-img {
+            background-image: url("./img/team2.jpg");
+            height:100vh; 
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+
+          @media (max-width:600px){
+            .landing-img{
+              background-image: url("./img/team2.jpg"), radial-gradient(#cce2f1, #255f85);
+            }
+          }
+
+          #hero {
+            width: 100%;
+            height: 100vh;
+            background:top center;
+            background-size: cover;
+            position: relative;
+          }
+          
+          @media (min-width: 1024px) {
+            #hero {
+              background-attachment: fixed;
+            }
+          }
+          
+        #hero:before {
+            content: "";
+            background: #272727;
+            opacity: 0.7;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+          }
+
+          @media (max-width: 768px) {
+            #hero:before {
+              content: "";
+              background: #272727;
+              opacity: 0.4;
+              position: absolute;
+              bottom: 0;
+              top: 0;
+              left: 0;
+              right: 0;
+            }
+          }
+          
+          #hero .hero-container {
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+          }
+
+        .navbar-nav li:hover {
+            border-bottom: 3px solid #EA4335 !important;
+            font-weight: 700 !important;
+        }
+
+        #li-team{
+            border-bottom: 3px solid #EA4335 !important;
+            font-weight: 700 !important;
+        }
+
+        .navbar-nav li a{
+          color: white !important;
+        }
+
+        .navbar-scroll{
+          background-color: #255F85;
+        }
+
+        #hero .hero-container .title{
+          font-size: 3rem;
+          font-weight:500 !important;
+          color: white;
+        }
+
+        @media(max-width:600px){
+          .flip-card{
+            margin-bottom: 5% !important;
+          }
+        }
+
+        .arrow {
+            opacity: 0;
+            position: absolute;
+                left: 50%;
+                top: 85%;
+            transform-origin: 50% 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .arrow-first {
+            animation: arrow-movement 2s ease-in-out infinite;
+        }
+        .arrow-second {
+            animation: arrow-movement 2s 1s ease-in-out infinite;
+        }
+
+        .arrow:before,
+        .arrow:after {
+            background: #fff;
+            content: '';
+            display: block;
+            height: 3px; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+        }
+
+        .arrow:before {
+            transform: rotate(45deg) translateX(-23%);
+            transform-origin: top left;
+        }
+
+        .arrow:after {
+            transform: rotate(-45deg) translateX(23%);
+            transform-origin: top right;
+        }
+
+        @keyframes arrow-movement {
+            0% { 
+                opacity: 0;
+                top: 80%;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% { 
+                opacity: 0;
+            }
+        }
+
+        .line{
+            width: 3rem;
+            height: 0.1rem;
+            background-color: #EA4335;
+        }
+
+        .line1{
+            width: 5rem;
+            height: 0.1rem;
+            background-color: #EA4335;
+        }
+        .row{
+            margin: 5% 0;
+        }
+        .flip-card {
+        width: 200px;
+        height: 200px; 
+        perspective: 1000px;
+        margin: auto;
+        }
+
+
+        .flip-card-inner {
+        position: relative;
+        border-radius: 100%;
+        background-color: #a4d7ce;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:focus {
+            outline: 0;
+        }
+
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus .flip-card-inner{
+        transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+        width: 100%;
+        color: black;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .flip-card-front img{
+            border-radius: 100%;
+            width: 90%;
+            height: 90%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card-back {
+            color: black;
+            transform: rotateY(180deg);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-name{
+            padding-top: 20%;
+        }
+
+        .team-domain{
+            margin-top: -10%;
+        }
+
+        footer{
+          width: 100%;
+          background-color: #272727;
+          text-align: center;
+          padding: 2%;
+        }
+
+        .sections a{
+          text-decoration: none;
+          color: #eee !important;
+        }
+
+        .sections li:not(:last-child):after{
+          content: '|';
+          padding: 0 2% 0 3%;
+          color: #255F85;
+        }
+
+        .sections li{
+          display: inline;
+          list-style: none;
+          font-weight: 600;
+        }
+
+        @media (max-width:600px){
+          .sections{
+            padding: 2% 0;
+          }
+          .sections li{
+            display: block;
+          }
+          .sections li:not(:last-child):after{
+            display: none;
+            padding: 0;
+          }
+        }
+
+        .footer-icon-bar{
+          display:flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .icons{
+          width: 36px;
+          height: 36px;
+          margin: 0 2%;
+          background-color: #255f85;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+
+        .footer-icon-bar a{
+          line-height: 36px;
+          color: #272727;
+          z-index: 1;
+          margin: 3% 3%;
+        }
+
+        footer p{
+          color: #255F85;
+          margin: 0;
+          padding: 0;
+          font-weight: 100;
+          font-size: 0.8rem;
+        }
+
+        .address{
+          color: #eee;
+          margin: 2% 0;
+        }
+
+        .td-email{
+          font-weight: 600!important;
+        }
+
+        .copyright{
+          width: 100%;
+          height: 2rem;
+          background-color: #255F85;
+          text-align: center;
+          font-size: 0.6rem;
+          color: #eee;
+          line-height: 2rem;
+          font-weight: 600;
+          margin: 0!important;
+        }
+
+        .copyright p{
+          margin: 0%;
+        }
+        
+    </style>
+    
+</head>
+<body>
+  <div class="landing-img">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-transparent" id="mynav">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">
+              <img src="img/android-chrome-192x192.png" width="55" height="40" class="d-inline-block" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <ul class="navbar-nav ml-auto text-white">
+              <li class="nav-item active" id="li-home">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item" id="li-about-us">
+                  <a class="nav-link" href="index.html#about-us">About Us</a>
+              </li>
+              <li class="nav-item" id="li-domains">
+                  <a class="nav-link" href="index.html#domains">Domains</a>
+              </li>
+              <li class="nav-item" id="li-team">
+                  <a class="nav-link" href="">Team</a>
+              </li>
+              <li class="nav-item" id="li-contact-us">
+                  <a class="nav-link" href="index.html#contact-us">Contact Us</a>
+              </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <div class="hero-container">
+          <h2 class="mb-3 title">Our Team</h2>
+      </div>
+    </section>
+
+    <div class="arrow arrow-first"></div>
+    <div class="arrow arrow-second"></div>
+  </div>
+
+    <div class="container">
+      <h2 class="pt-5" style="text-align: left;">Mentors</h2>
+      <div class="line"></div>
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/Thina.jpeg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">G S Thina</h3>
+                    <a href="https://www.linkedin.com/in/gsthina/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="flip-card" tabIndex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./img/teampage/Ritesh.jpeg" alt="">
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="team-name">Ritesh Bhat</h3> 
+                  <a href="https://www.linkedin.com/in/ritesh-bhat-528895a3/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/AnkitKumar.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Ankit Kumar</h3>
+                    <a href="https://www.linkedin.com/in/ankit28/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./img/teampage/Saiyasodharan.jpg" alt="">
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="team-name">Saiyasodharan R</h3> 
+                  <a href="https://www.linkedin.com/in/saiy2k/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/Srija.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name" style="padding-bottom: 15%;">Srija</h3>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/VatsalyaSinghi.jpeg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Vatsalya Singhi</h3> 
+                    <a href="https://www.linkedin.com/in/vatsalyasinghi/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/AnkeshPatel.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Ankesh Patel</h3>
+                      <a href="https://www.linkedin.com/in/ankesh-patel-aa1938a7/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+      <h2 class="pt-5" style="text-align: left;">Alumni</h2>
+      <div class="line"></div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/Paras.jpeg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Paras Tripathi</h3><br>
+                        <a href="https://www.linkedin.com/in/paras-tripathi-b15a15172/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/Shivang.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Shivang Kaul</h3><br>
+                      <a href="https://www.linkedin.com/in/shivangkaul/
+                      " target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/Anurag.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Anurag Patidar</h3><br>
+                      <a href="https://www.linkedin.com/in/anuragpatidar17/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/Yash.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Yash Aggarwal</h3><br>
+                      <a href="https://www.linkedin.com/in/yash-aggarwal-1497b9173/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+      <h2 class="pt-5" style="text-align: left;">Team Leads</h2>
+      <div class="line"></div>
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/Gaurav.jpeg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Gaurav</h3>
+                    <a href="https://github.com/gp559" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/gp559/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="flip-card" tabIndex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./img/teampage/Devansh.jpeg" alt="">
+                </div>
+                <div class="flip-card-back">
+                  <h3 class="team-name">Devansh</h3>
+                  <a href="https://github.com/devanshsrivastava" target="_blank"><i class="fa fa-github"></i></a> 
+                  <a href="https://www.linkedin.com/in/srivastavadevansh/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <h2 class="pt-5" style="text-align: left;">Web</h2>
+      <div class="line"></div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/RahulKalra.jpeg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Rahul</h3><br>
+                        <h6 class="team-domain">Web</h6>
+                        <a href="https://github.com/rahul4989" target="_blank"><i class="fa fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/rahul-kumar-a3ba48161" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/NamyaSinha.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Namya</h3><br>
+                      <h6 class="team-domain">Web</h6>
+                      <a href="https://github.com/namyasinha" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/namya-sinha-010204160
+                      " target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/NisargBijutkar.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Nisarg</h3><br>
+                      <h6 class="team-domain">Web</h6>
+                      <a href="https://github.com/Nisbij" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/nisarg-bijutkar-87a3aa172" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/Vanshika.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Vanshika</h3><br>
+                      <h6 class="team-domain">Web</h6>
+                      <a href="https://github.com/vanshika703" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/vanshika-bhojnagarwala/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/AkshataBihany.jpeg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Akshata</h3><br>
+                      <h6 class="team-domain">Web</h6>
+                      <a href="https://github.com/akshatabihany" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/akshata-bihany-50b60a165/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/ArindamLahiri.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Arindam</h3><br>
+                    <h6 class="team-domain">Web</h6>
+                    <a href="https://github.com/arindamlahiri" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/arindam-lahiri" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/AvichalGupta.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Avichal</h3><br>
+                    <h6 class="team-domain">Web</h6>
+                    <a href="https://github.com/AvichalGupta" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/avichal-gupta" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/ShambhaviDubey.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Shambhavi</h3><br>
+                    <h6 class="team-domain">Web</h6>
+                    <a href="https://github.com/shambhavi34" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/shambhavi-d-5b3288185
+                    " target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/AbhinavMajumdar.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Abhinav</h3><br>
+                      <h6 class="team-domain">Web</h6>
+                      <a href="https://github.com/abhi0108" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/abhinav-majumdar" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/DevangiPurkayastha.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Devangi</h3><br>
+                    <h6 class="team-domain">Web</h6>
+                    <a href="https://github.com/devangi2000" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/devangi-purkayastha-72b04216b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/KrettikaVarshney.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Krettika</h3><br>
+                    <h6 class="team-domain">Web</h6>
+                    <a href="https://github.com/krettika" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/krettika-varshney-16163019b/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div> 
+        </div>
+
+
+        <h2 class="pt-5" style="text-align: left;">App</h2>
+        <div class="line"></div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/PrateekUpadhyay.jpg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Prateek</h3><br>
+                        <h6 class="team-domain">App</h6>
+                        <a href="https://github.com/PrateekUpd" target="_blank"><i class="fa fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/prateekupd" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/AbhinavSharma.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Abhinav</h3><br>
+                      <h6 class="team-domain">App</h6>
+                      <a href="https://github.com/abhinavsharma2471716" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/abhinavsharma007
+                      " target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/VarunSharma.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Varun</h3><br>
+                      <h6 class="team-domain">App</h6>
+                      <a href="https://github.com/varun7703" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/varunsharma7703" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/SaurabhAgarwal.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Saurabh</h3><br>
+                      <h6 class="team-domain">App</h6>
+                      <a href="https://github.com/saurabhagarwal8" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/saurabhagarwal8/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/VimarshPatel.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Vimarsh</h3><br>
+                      <h6 class="team-domain">App</h6>
+                      <a href="https://github.com/Vimarsh07" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/vimarsh-patel-2607/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/Arulyan.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Arulyan</h3><br>
+                    <h6 class="team-domain">App</h6>
+                    <a href="https://github.com/arulyan" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/arulyan-asokan/
+                    " target="_blank"><i class="fa fa-linkedin""></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/HardikGarg.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Hardik</h3><br>
+                    <h6 class="team-domain">App</h6>
+                    <a href="https://github.com/Hardik-2019" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/hardik-garg" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/JatinKumawat.jpeg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Jatin</h3><br>
+                    <h6 class="team-domain">App</h6>
+                    <a href="https://github.com/jatink1" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/jatink1" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/AdityaNadkarni.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Aditya</h3><br>
+                      <h6 class="team-domain">App</h6>
+                      <a href="https://github.com/Avn007" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/aditya-v-nadkarni-45a70617a" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="flip-card" tabIndex="0">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="./img/teampage/AayushSaxena.jpg" alt="">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3 class="team-name">Aayush</h3><br>
+                    <h6 class="team-domain">App</h6>
+                    <a href="https://github.com/aayushx" target="_blank"><i class="fa fa-github"></i></a> 
+                    <a href="https://www.linkedin.com/in/aayush--saxena" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <h2 class="pt-5" style="text-align: left;">IOT</h2>
+          <div class="line"></div>
+          <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/NityaSinha.jpg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Nitya</h3><br>
+                        <h6 class="team-domain">IOT</h6>
+                        <a href="https://github.com/NITYASINHA" target="_blank"><i class="fa fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/nitya-sinha-420bb0168" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/NandishShah.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Nandish</h3><br>
+                      <h6 class="team-domain">IOT</h6>
+                      <a href="https://github.com/NANDISHSHAH" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/nandish-shah-32330b15a
+                      " target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/NikethBmn.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Niketh</h3><br>
+                      <h6 class="team-domain">IOT</h6>
+                      <a href="https://github.com/Nikethbayya" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/niketh-bayya-60453818b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/HarshRaj.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Harsh</h3><br>
+                      <h6 class="team-domain">IOT</h6>
+                      <a href="https://github.com/HarshRaj2911" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/harsh-raj-83036218a/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/SaiPranay.jpg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Sai Pranay</h3><br>
+                        <h6 class="team-domain">IOT</h6>
+                        <a href="https://github.com/saipranay23" target="_blank"><i class="fa fa-github"></i></a> 
+                        <a href="https://www.linkedin.com/in/sai-pranay-63452518b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/DivyanshSinghal.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Divyansh</h3><br>
+                      <h6 class="team-domain">IOT</h6>
+                      <a href="https://github.com/Divyanshs27" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/divyansh-singhal-13423417b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          <h2 class="pt-5" style="text-align: left;">Graphics</h2>
+          <div class="line"></div>
+          <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/AdhijVarshney.jpg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Adhij</h3><br>
+                        <h6 class="team-domain">Graphics</h6>
+                        <a href="https://www.linkedin.com/in/adhij-varshney-14954118b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/SourjayonNath.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Sourjayon</h3><br>
+                      <h6 class="team-domain">Graphics</h6>
+                      <a href="https://github.com/insistence-essenn" target="_blank"><i class="fa fa-github"></i></a> 
+                      <a href="https://www.linkedin.com/in/sourjayon-nath-557a43174/
+                      " target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
+          <h2 class="pt-5" style="text-align: left;">Game</h2>
+          <div class="line"></div>
+          <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/SubhradeepNag.jpeg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Subhradeep</h3><br>
+                        <h6 class="team-domain">Game</h6>
+                        <a href="https://github.com/subhradeepnag" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/subhradeep-nag-022156179" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="flip-card" tabIndex="0">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img src="./img/teampage/VijayPrakaash.jpg" alt="">
+                    </div>
+                    <div class="flip-card-back">
+                      <h3 class="team-name">Vijay</h3><br>
+                      <h6 class="team-domain">Game</h6>
+                      <a href="https://github.com/vijay-04" target="_blank"><i class="fa fa-github"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <h2 class="pt-5" style="text-align: left;">HR</h2>
+          <div class="line"></div>
+          <div class="row">
+            <div class="col-sm-3">
+                <div class="flip-card" tabIndex="0">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./img/teampage/NitinTewari.jpg" alt="">
+                      </div>
+                      <div class="flip-card-back">
+                        <h3 class="team-name">Nitin</h3><br>
+                        <h6 class="team-domain">HR</h6>
+                        <a href="https://github.com/nitintewari" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/nitin-tewari-36353218b" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>  
+
+    <footer>
+      <div class="container">
+          <ul class="sections">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about-us">About Us</a></li>
+              <li><a href="index.html#domains">Domains</a></li>
+              <li><a href="">Team</a></li>
+          </ul>
+          <div class="footer-icon-bar">
+              <div class="icons"><a href="https://www.facebook.com/teamTD/" target="_blank"><i class="fa fa-facebook"></i></a> </div>
+              <div class="icons"><a href="https://www.youtube.com/channel/UC38Rh8mw5OgKQQywPRfCwsg" target="_blank"><i class="fa fa-youtube-play"></i></a> </div>
+              <div class="icons"><a href="https://www.linkedin.com/school/think_digital/" target="_blank"><i class="fa fa-linkedin"></i></a></div>
+              <div class="icons"><a href="https://www.instagram.com/thinkdigital.td_srm/" target="_blank"><i class="fa fa-instagram"></i></a></div>
+          </div>
+          <p class="address">SRM Institute of Science & Technology,<br> Kattankulathur,<br>Tamil Nadu - 603-203</p>
+          <p>8617362801</p>
+          <p>8428367716</p>
+          <p class="td-email">thinkdigital.td@gmail.com</p>
+      </div>
+    </footer>
+    <div class="copyright">
+        <p>© Think Digital 2020 😀</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $(function() {
+          var header = $(".navbar");
+        
+          $(window).scroll(function() {    
+              var scroll = $(window).scrollTop();
+              if (scroll >= 50) {
+                  header.addClass("navbar-scroll");
+              } else {
+                  header.removeClass("navbar-scroll");
+              }
+          }); 
+      });
+
+      var navButton = document.querySelector(".navbar-toggler");
+      var n=2;
+      navButton.addEventListener('click', ()=>{
+          n+=1
+          if(n%2!=0){
+              document.querySelector(".navbar").classList.add("navbar-scroll")
+          }
+          else{
+              document.querySelector(".navbar").classList.remove("navbar-scroll")
+          }    
+      })
+    </script>
+</body>
+</html>

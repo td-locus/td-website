@@ -187,6 +187,10 @@ body {
   padding-top: 7%;
 }
 
+#about-us #row2 {
+  flex-direction: row-reverse;
+}
+
 @media (max-width: 768px) {
   #about-us,
   #contact-us {

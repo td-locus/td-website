@@ -203,6 +203,8 @@ body {
 }
 
 #about-us h2,
+#wpsRoadmap h2,
+#FAQ h2,
 #contact-us h2 {
   font-size: 3rem;
   font-weight: 800 !important;
@@ -213,6 +215,12 @@ body {
 #contact-us p {
   font-size: 1.2rem;
   text-align: center;
+}
+
+#wpsRoadmap p,
+#FAQ p{
+  font-size: 1.2rem;
+  text-align: left;
 }
 
 #illustration-img {

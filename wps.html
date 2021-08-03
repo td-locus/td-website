@@ -166,36 +166,385 @@
         <div class="line mx-auto"></div>
         <div class="select-domain">
           <div>
-            <button>Web Development</button>
+            <button onclick="toggleDomains('web')">Web Development</button>
           </div>
           <div>
-            <button>Mobile App Development</button>
+            <button onclick="toggleDomains('app')">Mobile App Development</button>
           </div>
           <div>
-            <button>Content Creation</button>
+            <button onclick="toggleDomains('cc')">Content Creation</button>
           </div>
         </div>
-        <div id="timeline">
+        <!-- Web Timeline -->
+        <div class="timeline" id="web">
           <div class="timeline-container left">
             <div class="timeline-content">
-              <h3>Hello</h3>
+              <h3>Web Week 1</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
               </p>
               <div class="time timeright"><h5>13 Dec 2021</h5></div>
-              <div><a href="./index.html">Click Me!</a></div>
+              <div>
+                <button onclick="toggleModal('webWeek1Modal','open')">Click Me!</button>
+              </div>
             </div>
           </div>
           <div class="timeline-container right">
             <div class="timeline-content">
-              <h3>World</h3>
+              <h3>Week 2</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
               </p>
               <div class="time timeleft"><h5>3 Aug 2021</h5></div>
-              <div><a href="./index.html">Click Me!</a></div>
+              <div>
+                <button onclick="toggleModal('webWeek2Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h3>Week 3</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeright"><h5>13 Dec 2021</h5></div>
+              <div><button onclick="toggleModal('webWeek3Modal','open')">Click Me!</button></div>
+            </div>
+          </div>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h3>Week 4</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeleft"><h5>3 Aug 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('webWeek4Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Timeline -->
+        <div class="timeline" id="app">
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h3>App Week 1</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeright"><h5>13 Dec 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('appWeek1Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h3>Week 2</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeleft"><h5>3 Aug 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('appWeek2Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h3>Week 3</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeright"><h5>13 Dec 2021</h5></div>
+              <div><button onclick="toggleModal('appWeek3Modal','open')">Click Me!</button></div>
+            </div>
+          </div>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h3>Week 4</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeleft"><h5>3 Aug 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('appWeek4Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Creation Timeline -->
+        <div class="timeline" id="cc">
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h3>Content Creation Week 1</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeright"><h5>13 Dec 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('CCWeek1Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h3>Week 2</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeleft"><h5>3 Aug 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('CCWeek2Modal','open')">Click Me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container left">
+            <div class="timeline-content">
+              <h3>Week 3</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeright"><h5>13 Dec 2021</h5></div>
+              <div><button onclick="toggleModal('CCWeek3Modal','open')">Click Me!</button></div>
+            </div>
+          </div>
+          <div class="timeline-container right">
+            <div class="timeline-content">
+              <h3>Week 4</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat laboriosam officia magni harum ipsam hic sapiente possimus consectetur, optio blanditiis voluptate necessitatibus libero quos sequi laudantium modi, deserunt magnam?
+              </p>
+              <div class="time timeleft"><h5>3 Aug 2021</h5></div>
+              <div>
+                <button onclick="toggleModal('CCWeek4Modal','open')">Click Me!</button>
+              </div>
             </div>
           </div>
         </div>
     </section>
+
+    <!-- Web Dev Modal Week 1 -->
+    <div id="webWeek1Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 1</p>
+              <span class="close" id="close1" onclick="toggleModal('webWeek1Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
+    <!-- Web Dev Modal Week 2 -->
+    <div id="webWeek2Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 2</p>
+              <span class="close" id="close2" onclick="toggleModal('webWeek2Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>Advanced CSS</li>
+              <li>Psuedo Selectors</li>
+              <li>Animations</li>
+              <li>Media Queries</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
+    <!-- Web Dev Modal Week 3 -->
+    <div id="webWeek3Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 3</p>
+              <span class="close" id="close3" onclick="toggleModal('webWeek3Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
+    <!-- Web Dev Modal Week 4 -->
+    <div id="webWeek4Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 4</p>
+              <span class="close" id="close4" onclick="toggleModal('webWeek4Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>Advanced CSS</li>
+              <li>Psuedo Selectors</li>
+              <li>Animations</li>
+              <li>Media Queries</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
+
+    <!-- App Dev Modal Week 1 -->
+    <div id="appWeek1Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 1</p>
+              <span class="close" id="close5" onclick="toggleModal('appWeek1Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>Angular</li>
+              <li>Ionic</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- App Dev Modal Week 2 -->
+    <div id="appWeek2Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 2</p>
+              <span class="close" id="close6" onclick="toggleModal('appWeek2Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- App Dev Modal Week 3 -->
+    <div id="webWeek3Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 3</p>
+              <span class="close" id="close7" onclick="toggleModal('webWeek3Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- App Dev Modal Week 4 -->
+    <div id="appWeek4Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 4</p>
+              <span class="close" id="close8" onclick="toggleModal('appWeek4Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
+
+    <!-- Content Creation Modal Week 1 -->
+    <div id="CCWeek1Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 1</p>
+              <span class="close" id="close9" onclick="toggleModal('CCWeek1Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>Canva</li>
+              <li>Adobe</li>
+              <li>Content Writing</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- Content Creation Modal Week 2 -->
+    <div id="CCWeek2Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 2</p>
+              <span class="close" id="close10" onclick="toggleModal('CCWeek2Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- Content Creation Modal Week 3 -->
+    <div id="CCWeek3Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 3</p>
+              <span class="close" id="close11" onclick="toggleModal('CCWeek3Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>    
+    <!-- Content Creation Modal Week 4 -->
+    <div id="CCWeek4Modal" class="modal">
+      <div class="modal-content" id="edit">
+          <div class="headerDiv">
+              <p>Week 4</p>
+              <span class="close" id="close12" onclick="toggleModal('CCWeek4Modal','close')">&times;</span>
+          </div>
+          <hr>
+          <div>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <hr>
+          <div style="height: 40px;"></div>
+      </div>
+    </div>
 
     <section class="container-fluid mt-5" id="FAQ">
         <h2 class="mb-3 wow fadeIn pb-3">FAQ</h2>

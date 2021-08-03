@@ -71,4 +71,41 @@ function displayFAQAnswers(id){
       clickedQuestion.childNodes[3].classList.add("answer");
       clickedQuestion.childNodes[3].classList.remove("showanswer");
     }
-  }
+}
+
+//Modal Popup
+function toggleModal(modalId,toggleState){
+    let modal = document.getElementById(modalId)
+    //Modal Close
+    if(toggleState=='close'){
+        modal.style.display="none"
+    }else{
+        modal.style.display = "block"
+    }
+}
+
+function toggleDomains(domainId){
+    let domainArr = ["web","app","cc"]
+    console.log(domainId)
+    domainArr.forEach((domainName)=>{
+        console.log(`domainName`, domainName)
+        console.log(`check: ${domainName==domainId}`)
+        let domain = document.getElementById(domainName)
+        if(domainName==domainId)
+            domain.style.display = "block";
+        else
+            domain.style.display = "none"
+    })
+}
+
+// window.onclick = function (event) {
+//     if (event.target == addModal) {
+//       addModal.style.display = "none";
+//     }
+//     if (event.target == editModal) {
+//       editModal.style.display = "none";
+//     }
+//     if (event.target == deleteModal) {
+//       deleteModal.style.display = "none";
+//     }
+// };

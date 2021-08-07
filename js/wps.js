@@ -78,25 +78,53 @@ function toggleModal(modalId,toggleState){
     let modal = document.getElementById(modalId)
     //Modal Close
     if(toggleState=='close'){
+        document.querySelector('#forBlurring').style.backgroundColor = ""
+        document.querySelectorAll('.faq').forEach(fa =>{
+            fa.style.opacity = "1"
+        })
         modal.style.display="none"
     }else{
+        document.querySelector('#forBlurring').style.backgroundColor = "rgba(0,0,0,0.4)" 
+        document.querySelectorAll('.faq').forEach(fa =>{
+            fa.style.opacity = "0.4" 
+        })
         modal.style.display = "block"
     }
 }
 
-function toggleDomains(domainId){
-    let domainArr = ["web","app","cc"]
-    console.log(domainId)
-    domainArr.forEach((domainName)=>{
-        console.log(`domainName`, domainName)
-        console.log(`check: ${domainName==domainId}`)
-        let domain = document.getElementById(domainName)
-        if(domainName==domainId)
-            domain.style.display = "block";
-        else
-            domain.style.display = "none"
-    })
-}
+function toggleDomains(domainId) {
+    let domainArr = ["web", "app", "cc"];
+    console.log(domainId);
+    domainArr.forEach((domainName) => {
+      console.log(`domainName`, domainName);
+      console.log(`check: ${domainName == domainId}`);
+      let domain = document.getElementById(domainName);
+      if (domainName == domainId) {
+        domain.style.display = "block";
+        document.querySelector(
+          `.${domainName}` + "wpsToggle"
+        ).style.backgroundColor = "#0062cc";
+      } else {
+        domain.style.display = "none";
+        document.querySelector(
+          `.${domainName}` + "wpsToggle"
+        ).style.backgroundColor = "#255f85";
+      }
+    });
+  }
+// function toggleDomains(domainId){
+//     let domainArr = ["web","app","cc"]
+//     console.log(domainId)
+//     domainArr.forEach((domainName)=>{
+//         console.log(`domainName`, domainName)
+//         console.log(`check: ${domainName==domainId}`)
+//         let domain = document.getElementById(domainName)
+//         if(domainName==domainId)
+//             domain.style.display = "block";
+//         else
+//             domain.style.display = "none"
+//     })
+// }
 
 // window.onclick = function (event) {
 //     if (event.target == addModal) {

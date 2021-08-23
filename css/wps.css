@@ -361,6 +361,22 @@ transition: 300ms linear; */
 	.timeleft {
 		left: -215px;
 	}
+
+  /* styling knowmores */
+
+  /* .knowmore{
+    color: yellow;    
+    text-align: center !important;
+    margin-top: 50px !important;
+  } */
+
+  .left-align{
+    text-align: left;
+}
+
+.right-align{
+    text-align: left !important;
+}
 }
 @media screen and (max-width: 760px){
 	/* .time {
@@ -511,6 +527,6 @@ transition: 300ms linear; */
     float: center;
 }
 
-.domain-card{
+/* .domain-card{
     
-}
+} */

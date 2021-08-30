@@ -20,3 +20,41 @@ function toggleModal(modalId, toggleState) {
     modal.style.display = "block";
   }
 }
+
+//!Collapsed navbar color
+var navButton = document.querySelector(".navbar-toggler");
+var n = 2;
+navButton.addEventListener("click", () => {
+  n += 1;
+  if (n % 2 != 0) {
+    document.querySelector(".navbar").classList.add("navbar-scroll");
+  } else {
+    document.querySelector(".navbar").classList.remove("navbar-scroll");
+  }
+});
+
+// !Navbar color on scroll
+
+$(function () {
+  var header = $(".navbar");
+
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 50) {
+      header.addClass("navbar-scroll");
+    } else {
+      header.removeClass("navbar-scroll");
+    }
+  });
+});
+
+// disabled tooltips
+
+// const buttonslist = document.querySelectorAll(".domain-disabled");
+// const tooltip = document.querySelector("#tooltip");
+
+// buttonslist.forEach((button) => {
+//   Popper.createPopper(button, tooltip, {
+//     placement: "top",
+//   });
+// });

@@ -511,6 +511,7 @@ transition: 300ms linear; */
     float: center;
 }
 
-.domain-card{
-    
+.domain-disabled{
+  opacity: 0.4;
+  cursor: default;
 }
